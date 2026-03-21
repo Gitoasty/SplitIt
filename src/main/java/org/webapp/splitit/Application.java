@@ -1,4 +1,4 @@
-package org.vaadin.example;
+package org.webapp.splitit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

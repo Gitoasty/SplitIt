@@ -1,17 +1,19 @@
 package org.webapp.splitit.data.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class ExpenseShareDTO {
+    @NotNull
     private Double total;
+    @NotNull
     private Double shareAmount;
+    @NotNull
     private String username;
     private Boolean isPaid;
     private Date paidAt;

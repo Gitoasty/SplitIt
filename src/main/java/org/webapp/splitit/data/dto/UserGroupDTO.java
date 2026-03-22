@@ -14,7 +14,6 @@ public class UserGroupDTO {
     @NotNull
     private String name;
     @NotNull
-    private String desription;
-    @NotNull
+    private String description;
     private Date createdAt;
 }

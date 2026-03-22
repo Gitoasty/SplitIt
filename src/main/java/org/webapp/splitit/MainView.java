@@ -7,8 +7,6 @@ import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
-import lombok.AllArgsConstructor;
-import org.webapp.splitit.data.mockrepo.MockExpenseGroupRepo;
 
 /**
  * A sample Vaadin view class.

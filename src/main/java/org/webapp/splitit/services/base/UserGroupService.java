@@ -11,4 +11,6 @@ public interface UserGroupService {
     UserGroup insert(UserGroupDTO in);
 
     UserGroup getByName(String name);
+
+    boolean delete(String name);
 }

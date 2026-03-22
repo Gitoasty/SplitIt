@@ -14,10 +14,10 @@ public class UserDTO {
     @NotNull
     @Pattern(regexp = "^[\\p{Alpha} ]*$", message = "Name should contain only alphabets and space")
     private String username;
-    @NotNull
+    @NotNull //mogu dodati @Email constraint
     private String email;
     @NotNull
-    private UserRoles role;
+    private String password;
     @NotNull
     private String groupName;
 }

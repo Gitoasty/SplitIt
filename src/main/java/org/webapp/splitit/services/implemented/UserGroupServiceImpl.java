@@ -1,5 +1,6 @@
 package org.webapp.splitit.services.implemented;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.webapp.splitit.data.dto.UserGroupDTO;
@@ -35,5 +36,11 @@ public class UserGroupServiceImpl implements UserGroupService {
         Optional<UserGroup>  group = repo.findByName(name);
 
         return group.orElse(null);
+    }
+
+    @Transactional
+    @Override
+    public boolean delete(String name) {
+        return repo.deleteByName(name) == 1;
     }
 }

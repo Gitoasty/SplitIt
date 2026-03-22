@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface UserGroupRepo extends JpaRepository<UserGroup, Integer> {
 
     Optional<UserGroup> findByName(String name);
+
+    int deleteByName(String name);
 }

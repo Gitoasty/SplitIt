@@ -1,5 +1,6 @@
 package org.webapp.splitit.controllers.api;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class UserController {
         if (userService.getByName(userIn.getUsername()) == null && groupService.getByName(userIn.getGroupName()) != null) {
             User user = new User();
             user.setUsername(userIn.getUsername());
-            user.setPassword(userIn.getPassword());
+            user.setPassword(BCrypt.withDefaults().hashToString(12, userIn.getPassword().toCharArray()));
             user.setEmail(userIn.getEmail());
             user.setRole(UserRoles.USER);
             user.setGroup(groupService.getByName(userIn.getGroupName()));

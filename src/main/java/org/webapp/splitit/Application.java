@@ -1,5 +1,6 @@
 package org.webapp.splitit;
 
+import org.quartz.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +8,8 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.lumo.Lumo;
+import org.springframework.context.annotation.Bean;
+import org.webapp.splitit.jobs.SomeJobDemo;
 
 /**
  * The entry point of the Spring Boot application.

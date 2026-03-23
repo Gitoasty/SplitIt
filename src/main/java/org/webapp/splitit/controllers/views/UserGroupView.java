@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+import jakarta.annotation.security.PermitAll;
 import org.webapp.splitit.data.dto.UserGroupDTO;
 import org.webapp.splitit.data.entity.UserGroup;
 import org.webapp.splitit.model.enums.Currencies;
@@ -19,6 +20,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 @Route("userGroup")
+@PermitAll
 public class UserGroupView extends VerticalLayout {
 
     public UserGroupView(UserGroupService service) {

@@ -36,7 +36,5 @@ public class UserGroupDetailView extends VerticalLayout implements HasUrlParamet
         GridListDataView<User> userView = userGrid.setItems(userService.getByGroupId(service.getByName(decoded).getId()));
 
         add(grid, userGrid);
-
-
     }
 }

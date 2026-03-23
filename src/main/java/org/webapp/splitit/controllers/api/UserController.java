@@ -29,7 +29,7 @@ public class UserController {
             user.setUsername(userIn.getUsername());
             user.setPassword(BCrypt.withDefaults().hashToString(12, userIn.getPassword().toCharArray()));
             user.setEmail(userIn.getEmail());
-            user.setRole(UserRoles.USER);
+            user.setRole(UserRoles.ROLE_USER);
             user.setGroup(groupService.getByName(userIn.getGroupName()));
 
             userService.insert(user);

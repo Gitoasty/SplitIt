@@ -1,11 +1,14 @@
 package org.webapp.splitit.security;
 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.webapp.splitit.data.entity.User;
 import org.webapp.splitit.data.repository.UserRepo;
+
+import java.util.List;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -21,7 +24,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
                 user.getUsername(),
                 user.getPassword(),
-                user.getRole().name()
+                List.of(new SimpleGrantedAuthority(user.getRole().name()))
         );
     }
 }

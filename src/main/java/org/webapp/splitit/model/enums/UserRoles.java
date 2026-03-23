@@ -1,6 +1,6 @@
 package org.webapp.splitit.model.enums;
 
 public enum UserRoles {
-    USER,
-    ADMIN
+    ROLE_USER,
+    ROLE_ADMIN
 }

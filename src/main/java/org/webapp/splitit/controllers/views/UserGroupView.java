@@ -2,7 +2,6 @@ package org.webapp.splitit.controllers.views;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.dataview.GridListDataView;
 import com.vaadin.flow.component.notification.Notification;
@@ -12,7 +11,6 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import org.webapp.splitit.data.dto.UserGroupDTO;
 import org.webapp.splitit.data.entity.UserGroup;
-import org.webapp.splitit.model.enums.Currencies;
 import org.webapp.splitit.services.base.UserGroupService;
 
 import java.net.URLEncoder;

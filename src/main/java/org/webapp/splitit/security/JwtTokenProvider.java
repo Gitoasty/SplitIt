@@ -11,7 +11,7 @@ import java.util.Date;
 
 @Component
 public class JwtTokenProvider {
-    @Value("${jwt.base64.secret}")
+    @Value("${jwt.base64-secret}")
     private String secret;
     @Value("${jwt.token-validity-seconds}")
     private long validity;

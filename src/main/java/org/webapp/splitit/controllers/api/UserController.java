@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,13 +21,14 @@ import org.webapp.splitit.services.base.UserService;
 public class UserController {
     private UserService userService;
     private UserGroupService groupService;
+    private PasswordEncoder passwordEncoder;
 
     @PostMapping("/new")
     public ResponseEntity<User> addNew(@RequestBody @Valid UserDTO userIn) {
         if (userService.getByName(userIn.getUsername()) == null && groupService.getByName(userIn.getGroupName()) != null) {
             User user = new User();
             user.setUsername(userIn.getUsername());
-            user.setPassword(userIn.getPassword());
+            user.setPassword(passwordEncoder.encode(userIn.getPassword()));
             user.setEmail(userIn.getEmail());
             user.setRole(UserRoles.USER);
             user.setGroup(groupService.getByName(userIn.getGroupName()));

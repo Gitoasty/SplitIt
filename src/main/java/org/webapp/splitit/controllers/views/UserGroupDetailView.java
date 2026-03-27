@@ -6,6 +6,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.Route;
+import jakarta.annotation.security.PermitAll;
+import jakarta.annotation.security.RolesAllowed;
 import org.webapp.splitit.data.entity.User;
 import org.webapp.splitit.data.entity.UserGroup;
 import org.webapp.splitit.services.base.UserGroupService;
@@ -15,6 +17,7 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
 @Route("details/userGroup")
+@RolesAllowed("ADMIN")
 public class UserGroupDetailView extends VerticalLayout implements HasUrlParameter<String> {
     private final UserGroupService service;
     private final UserService userService;

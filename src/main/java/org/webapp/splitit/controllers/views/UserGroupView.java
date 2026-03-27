@@ -2,7 +2,6 @@ package org.webapp.splitit.controllers.views;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.dataview.GridListDataView;
 import com.vaadin.flow.component.notification.Notification;
@@ -10,15 +9,16 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+import jakarta.annotation.security.PermitAll;
 import org.webapp.splitit.data.dto.UserGroupDTO;
 import org.webapp.splitit.data.entity.UserGroup;
-import org.webapp.splitit.model.enums.Currencies;
 import org.webapp.splitit.services.base.UserGroupService;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 @Route("userGroup")
+@PermitAll
 public class UserGroupView extends VerticalLayout {
 
     public UserGroupView(UserGroupService service) {
